@@ -274,7 +274,7 @@
     }
   },
   {
-    "name": "Oakland Raiders",
+    "name": "Las Vegas Raiders",
     "query": "oakland_raiders",
     "league": "nfl",
     "colors": {
@@ -380,7 +380,7 @@
     }
   },
   {
-    "name": "Washington Redskins",
+    "name": "Washington",
     "query": "washington",
     "league": "nfl",
     "colors": {
