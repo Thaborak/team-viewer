@@ -9,7 +9,7 @@ import { sliceKey, reducer, actions } from './slice';
 import { sportsDbFormSaga } from './saga';
 import { selectTeam, selectName, selectError } from './selectors';
 import { TeamErrorType } from './types';
-import nfl from '../../teams.json';
+import { nfl } from '../../teams';
 
 export function SportsDBRepoForm() {
   useInjectReducer({ key: sliceKey, reducer: reducer });

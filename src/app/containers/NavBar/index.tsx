@@ -5,7 +5,7 @@ import { Logo } from './Logo';
 import { StyleConstants } from 'styles/StyleConstants';
 import { Nav } from './Nav';
 import { selectTeam } from '../SportsDBForm/selectors';
-import nfl from '../../teams.json';
+import { nfl } from '../../teams';
 import { PageWrapper } from '../../components/PageWrapper';
 
 export function NavBar() {

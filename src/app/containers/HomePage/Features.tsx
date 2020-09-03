@@ -93,7 +93,7 @@ export function Features() {
   );
 }
 
-const Art = styled.li`
+const Art = styled.div`
   display: inline-flexbox;
   /* margin: 6.25rem 0 6.25rem 2.25rem; */
   @media (max-width: 768px) {

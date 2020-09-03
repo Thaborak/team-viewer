@@ -7,7 +7,7 @@ import { PageWrapper } from 'app/components/PageWrapper';
 import { LoadingIndicator } from 'app/components/LoadingIndicator';
 import { useSelector } from 'react-redux';
 import { selectLoading, selectTeam } from '../SportsDBForm/selectors';
-import nfl from '../../teams.json';
+import { nfl } from '../../teams';
 import styled from 'styled-components/macro';
 
 export function HomePage() {
@@ -17,35 +17,6 @@ export function HomePage() {
     teams.length > 0
       ? nfl.filter(t => t.name === teams[0].strTeam)[0].colors.hex
       : '';
-
-  const SideBarR = styled.div`
-    width: 20vw;
-    height: 100%;
-    box-sizing: content-box;
-    background-color: ${'#' + colors[0]};
-    position: fixed;
-    z-index: 2;
-    margin-right: 80vw;
-    @media (max-width: 768px) {
-    display: none
-    }
-  }
-  `;
-
-  const SideBarL = styled.div`
-    width: 30vw;
-    height: 100%;
-    box-sizing: content-box;
-    background-color: ${'#' + colors[1]};
-    position: fixed;
-    z-index: 2;
-    margin-left: 80vw;
-    @media (max-width: 768px) {
-    display: none
-    }
-  }
-  `;
-
   return (
     <>
       <Helmet>
@@ -57,8 +28,8 @@ export function HomePage() {
       </Helmet>
       <NavBar />
       {isLoading && <LoadingIndicator />}
-      <SideBarL />
-      <SideBarR />
+      <SideBarL color={`${'#' + colors[1]}`} />
+      <SideBarR color={`${'#' + colors[0]}`} />
       <PageWrapper>
         <Masthead />
         <Features />
@@ -66,3 +37,31 @@ export function HomePage() {
     </>
   );
 }
+
+const SideBarR = styled.div`
+width: 20vw;
+height: 100%;
+box-sizing: content-box;
+background-color: ${p => (p.color !== '#undefined' ? p.color : 'white')};
+position: fixed;
+z-index: 2;
+margin-right: 80vw;
+@media (max-width: 768px) {
+display: none
+}
+}
+`;
+
+const SideBarL = styled.div`
+width: 30vw;
+height: 100%;
+box-sizing: content-box;
+background-color: ${p => (p.color !== '#undefined' ? p.color : 'white')};
+position: fixed;
+z-index: 2;
+margin-left: 80vw;
+@media (max-width: 768px) {
+display: none
+}
+}
+`;
