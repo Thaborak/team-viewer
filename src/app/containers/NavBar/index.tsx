@@ -1,13 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components/macro';
 import { Logo } from './Logo';
 import { StyleConstants } from 'styles/StyleConstants';
 import { Nav } from './Nav';
+import { selectTeam } from '../SportsDBForm/selectors';
+import nfl from '../../teams.json';
 import { PageWrapper } from '../../components/PageWrapper';
 
 export function NavBar() {
+  const teams = useSelector(selectTeam);
+  const colors =
+    teams.length > 0
+      ? nfl.filter(t => t.name === teams[0].strTeam)[0].colors.hex
+      : '';
+
   return (
-    <Wrapper>
+    <Wrapper color={`${'#' + colors[3]}`}>
       <PageWrapper>
         <Logo />
         <Nav />
@@ -23,8 +32,8 @@ const Wrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${p => p.theme.background};
-  z-index: 2;
+  background-color: ${p => (p.color !== '#undefined' ? p.color : 'white')};
+  z-index: 4;
 
   @supports (backdrop-filter: blur(10px)) {
     backdrop-filter: blur(10px);

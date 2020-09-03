@@ -27,12 +27,12 @@ export function LanguageSwitch() {
         />
         <Radio
           id="tr"
-          label="Deutsch"
+          label="Espanol"
           className="radio"
           name="language"
           onChange={handleLanguageChange}
-          value="de"
-          isSelected={i18n.language === 'de'}
+          value="es"
+          isSelected={i18n.language === 'es'}
         />
       </Languages>
     </Wrapper>

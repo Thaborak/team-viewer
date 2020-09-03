@@ -1,15 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components/macro';
-import { ReactComponent as CRALogo } from './assets/cra-logo.svg';
-import { ReactComponent as RPLogo } from './assets/rp-logo.svg';
-import { ReactComponent as PlusSign } from './assets/plus-sign.svg';
+import { selectTeam } from '../SportsDBForm/selectors';
 
 export function Logos() {
+  const teams = useSelector(selectTeam);
   return (
     <Wrapper>
-      <CRALogo className="logo" />
-      <PlusSign className="sign" />
-      <RPLogo className="logo" />
+      <img alt="Banner" src={teams?.length > 0 ? teams[0].strTeamBanner : ''} />
     </Wrapper>
   );
 }
@@ -18,15 +16,8 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   color: ${p => p.theme.border};
-
-  .logo {
-    width: 4.5rem;
-    height: 4.5rem;
+  @media (max-width: 768px) {
+    display: none;
   }
-
-  .sign {
-    width: 2rem;
-    height: 2rem;
-    margin: 0 2rem;
-  }
+  margin-top: 2rem;
 `;

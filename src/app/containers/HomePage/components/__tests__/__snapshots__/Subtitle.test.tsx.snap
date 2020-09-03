@@ -4,7 +4,7 @@ exports[`<Subtitle /> should render and match the snapshot 1`] = `
 .c0 {
   font-size: 1.25rem;
   margin: 0;
-  color: rgba(58,52,51,1);
+  color: rgba(0,0,0,1);
 }
 
 <h3

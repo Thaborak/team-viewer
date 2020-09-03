@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;

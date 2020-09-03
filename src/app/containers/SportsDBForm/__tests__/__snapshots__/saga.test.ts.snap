@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getRepos Saga should dispatch the github rate limit error 1`] = `
+exports[`getTeam Saga should dispatch the github rate limit error 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -15,7 +15,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the github rate limit error 2`] = `
+exports[`getTeam Saga should dispatch the github rate limit error 2`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -27,13 +27,13 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the github rate limit error 3`] = `
+exports[`getTeam Saga should dispatch the github rate limit error 3`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
   "payload": Object {
     "args": Array [
-      "https://api.github.com/users/test/repos?type=all&sort=updated",
+      "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=test",
     ],
     "context": null,
     "fn": [Function],
@@ -42,7 +42,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the reposLoaded action if it requests the data successfully 1`] = `
+exports[`getTeam Saga should dispatch the response error 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -57,7 +57,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the reposLoaded action if it requests the data successfully 2`] = `
+exports[`getTeam Saga should dispatch the response error 2`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -69,13 +69,13 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the reposLoaded action if it requests the data successfully 3`] = `
+exports[`getTeam Saga should dispatch the response error 3`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
   "payload": Object {
     "args": Array [
-      "https://api.github.com/users/test/repos?type=all&sort=updated",
+      "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=test",
     ],
     "context": null,
     "fn": [Function],
@@ -84,7 +84,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the response error 1`] = `
+exports[`getTeam Saga should dispatch the teamsLoaded action if it requests the data successfully 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -99,7 +99,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the response error 2`] = `
+exports[`getTeam Saga should dispatch the teamsLoaded action if it requests the data successfully 2`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -111,22 +111,22 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the response error 3`] = `
+exports[`getTeam Saga should dispatch the teamsLoaded action if it requests the data successfully 3`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
   "payload": Object {
-    "args": Array [
-      "https://api.github.com/users/test/repos?type=all&sort=updated",
-    ],
-    "context": null,
-    "fn": [Function],
+    "action": Object {
+      "payload": 3,
+      "type": "sportsDbRepoForm/teamError",
+    },
+    "channel": undefined,
   },
-  "type": "CALL",
+  "type": "PUT",
 }
 `;
 
-exports[`getRepos Saga should dispatch the user has no repo error 1`] = `
+exports[`getTeam Saga should dispatch the user has no repo error 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -141,7 +141,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the user has no repo error 2`] = `
+exports[`getTeam Saga should dispatch the user has no repo error 2`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -153,13 +153,13 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the user has no repo error 3`] = `
+exports[`getTeam Saga should dispatch the user has no repo error 3`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
   "payload": Object {
     "args": Array [
-      "https://api.github.com/users/test/repos?type=all&sort=updated",
+      "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=test",
     ],
     "context": null,
     "fn": [Function],
@@ -168,7 +168,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the user not found error 1`] = `
+exports[`getTeam Saga should dispatch the user not found error 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -183,7 +183,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the user not found error 2`] = `
+exports[`getTeam Saga should dispatch the user not found error 2`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -195,13 +195,13 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should dispatch the user not found error 3`] = `
+exports[`getTeam Saga should dispatch the user not found error 3`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
   "payload": Object {
     "args": Array [
-      "https://api.github.com/users/test/repos?type=all&sort=updated",
+      "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=test",
     ],
     "context": null,
     "fn": [Function],
@@ -210,7 +210,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should return error if username is empty 1`] = `
+exports[`getTeam Saga should return error if username is empty 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,
@@ -225,7 +225,7 @@ Object {
 }
 `;
 
-exports[`getRepos Saga should return error if username is empty 2`] = `
+exports[`getTeam Saga should return error if username is empty 2`] = `
 Object {
   "@@redux-saga/IO": true,
   "combinator": false,

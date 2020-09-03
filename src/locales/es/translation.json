@@ -1,0 +1,17 @@
+{
+  "intro": {
+    "title": "Descripción General"
+  },
+  "nav": {
+    "title": "Espectador de Equipo",
+    "dropdown": "Su equipo favorito de la NFL"
+  },
+  "i18nFeature": {
+    "title": "i18n Internationalization & Pluralization",
+    "selectLanguage": "Seleccionar Idioma"
+  },
+  "Facts": {
+    "established": "Establecido",
+    "coach": "Entrenador"
+  }
+}

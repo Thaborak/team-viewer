@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const Input = styled.input`
+export const Select = styled.select`
   border: 2px solid ${p => p.theme.border};
   border-radius: 4px;
   color: ${p => p.theme.text};

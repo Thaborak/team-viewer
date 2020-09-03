@@ -1,5 +1,5 @@
 /*
- * GithubRepoForm Slice
+ * SportsDBForm Slice
  *
  * Here we define:
  * - The shape of our container's slice of Redux store,
@@ -7,45 +7,44 @@
  *
  * Note that, while we are using dot notation in our reducer, we are not actually mutating the state
  * manually. Under the hood, we use immer to apply these updates to a new copy of the state.
- * Please see https://immerjs.github.io/immer/docs/introduction for more information.
  *
  */
 
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
-import { ContainerState, RepoErrorType } from './types';
-import { Repo } from 'types/Repo';
+import { ContainerState, TeamErrorType } from './types';
+import { Team } from 'types/Team';
 
-// The initial state of the GithubRepoForm container
+// The initial state of the SportsDBForm container
 export const initialState: ContainerState = {
-  username: 'react-boilerplate',
-  repositories: [],
+  teamname: 'new_york_giants',
+  teams: [],
   loading: false,
   error: null,
 };
 
-const githubRepoFormSlice = createSlice({
-  name: 'githubRepoForm',
+const sportsDbFormSlice = createSlice({
+  name: 'sportsDbRepoForm',
   initialState,
   reducers: {
-    changeUsername(state, action: PayloadAction<string>) {
-      state.username = action.payload;
+    changeTeamName(state, action: PayloadAction<string>) {
+      state.teamname = action.payload;
     },
-    loadRepos(state) {
+    loadTeam(state) {
       state.loading = true;
       state.error = null;
-      state.repositories = [];
+      state.teams = [];
     },
-    reposLoaded(state, action: PayloadAction<Repo[]>) {
-      const repos = action.payload;
-      state.repositories = repos;
+    teamLoaded(state, action: PayloadAction<Team[]>) {
+      const teams = action.payload;
+      state.teams = teams;
       state.loading = false;
     },
-    repoError(state, action: PayloadAction<RepoErrorType>) {
+    teamError(state, action: PayloadAction<TeamErrorType>) {
       state.error = action.payload;
       state.loading = false;
     },
   },
 });
 
-export const { actions, reducer, name: sliceKey } = githubRepoFormSlice;
+export const { actions, reducer, name: sliceKey } = sportsDbFormSlice;

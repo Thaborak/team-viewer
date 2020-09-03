@@ -1,28 +1,31 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components/macro';
 import { ReactComponent as DocumentationIcon } from './assets/documentation-icon.svg';
-import { ReactComponent as GithubIcon } from './assets/github-icon.svg';
+import { ReactComponent as TwitterIcon } from './assets/twitter-1.svg';
+import { selectTeam } from '../SportsDBForm/selectors';
 
 export function Nav() {
+  const teams = useSelector(selectTeam);
   return (
     <Wrapper>
       <Item
-        href="https://cansahin.gitbook.io/react-boilerplate-cra-template/"
+        href={`http://${teams?.length > 0 ? teams[0].strWebsite : '/'}`}
         target="_blank"
-        title="Documentation Page"
+        title="Offical Page"
         rel="noopener noreferrer"
       >
         <DocumentationIcon />
-        Documentation
+        Offical Page
       </Item>
       <Item
-        href="https://github.com/react-boilerplate/react-boilerplate-cra-template"
+        href={`http://${teams?.length > 0 ? teams[0].strTwitter : '/'}`}
         target="_blank"
-        title="Github Page"
+        title="Twitter Page"
         rel="noopener noreferrer"
       >
-        <GithubIcon />
-        Github
+        <TwitterIcon className="icon" />
+        Twitter
       </Item>
     </Wrapper>
   );
@@ -31,14 +34,16 @@ export function Nav() {
 const Wrapper = styled.nav`
   display: flex;
   margin-right: -1rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Item = styled.a`
-  color: ${p => p.theme.primary};
+  color: black;
   cursor: pointer;
   text-decoration: none;
   display: flex;
-  padding: 0.25rem 1rem;
   font-size: 0.875rem;
   font-weight: 500;
   align-items: center;
@@ -52,6 +57,6 @@ const Item = styled.a`
   }
 
   .icon {
-    margin-right: 0.25rem;
+    margin-left: 0.1rem;
   }
 `;
